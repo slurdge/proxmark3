@@ -94,6 +94,9 @@ void PrintAndLogEx(logLevel_t level, const char *fmt, ...) {
             if (PrintAndLogEx_spinidx == ARRAYLEN(spinner))
                 PrintAndLogEx_spinidx = 0;
             break;
+        case PROXMARK:
+            strncpy(prefix, _MAGENTA_("[pm3]"), sizeof(prefix) - 1);
+            break;
         case NORMAL:
             // no prefixes for normal
             break;

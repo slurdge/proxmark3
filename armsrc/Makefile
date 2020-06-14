@@ -22,6 +22,9 @@ endif
 APP_CFLAGS = $(PLATFORM_DEFS) \
              -ffunction-sections -fdata-sections
 
+SRC_UMM = umm_info.c umm_malloc.c
+APP_CFLAGS += -I..\common\umm_malloc\
+
 SRC_LF = lfops.c lfsampling.c pcf7931.c lfdemod.c lfadc.c
 SRC_ISO15693 = iso15693.c iso15693tools.c
 SRC_ISO14443a = iso14443a.c mifareutil.c mifarecmd.c epa.c mifaresim.c
@@ -89,6 +92,7 @@ APP_CFLAGS += -I. -fno-stack-protector -fno-pie
 
 # Compile these in thumb mode (small size)
 THUMBSRC = start.c \
+    $(SRC_UMM) \
     $(SRC_LCD) \
     $(SRC_ISO15693) \
     $(SRC_NFCBARCODE) \

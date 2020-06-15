@@ -22,8 +22,8 @@ endif
 APP_CFLAGS = $(PLATFORM_DEFS) \
              -ffunction-sections -fdata-sections
 
-SRC_UMM = umm_info.c umm_malloc.c
-APP_CFLAGS += -I..\common\umm_malloc\
+SRC_UMM = umm_malloc.c
+APP_CFLAGS += -I../common/umm_malloc -Wno-pointer-arith -Wno-bad-function-cast -Wno-format -Wno-format-security -DUMM_INFO
 
 SRC_LF = lfops.c lfsampling.c pcf7931.c lfdemod.c lfadc.c
 SRC_ISO15693 = iso15693.c iso15693tools.c

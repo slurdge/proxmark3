@@ -72,40 +72,40 @@
 /* ------------------------------------------------------------------------- */
 
 #if DBGLOG_LEVEL >= 6
-#  define DBGLOG_TRACE(format, ...) DBGLOG_FUNCTION(stdout, format, ## __VA_ARGS__); fflush(stdout);
+#  define DBGLOG_TRACE(...) DBGLOG_FUNCTION(stdout, ## __VA_ARGS__); fflush(stdout);
 #else
-#  define DBGLOG_TRACE(format, ...)
+#  define DBGLOG_TRACE(...)
 #endif
 
 #if DBGLOG_LEVEL >= 5
-#  define DBGLOG_DEBUG(format, ...) DBGLOG_FUNCTION(stdout, format, ## __VA_ARGS__); fflush(stdout);
+#  define DBGLOG_DEBUG(...) DBGLOG_FUNCTION(stdout, ## __VA_ARGS__); fflush(stdout);
 #else
-#  define DBGLOG_DEBUG(format, ...)
+#  define DBGLOG_DEBUG(...)
 #endif
 
 #if DBGLOG_LEVEL >= 4
-#  define DBGLOG_CRITICAL(format, ...) DBGLOG_FUNCTION(stdout, format, ## __VA_ARGS__); fflush(stdout);
+#  define DBGLOG_CRITICAL(...) DBGLOG_FUNCTION(stdout, ## __VA_ARGS__); fflush(stdout);
 #else
-#  define DBGLOG_CRITICAL(format, ...)
+#  define DBGLOG_CRITICAL(...)
 #endif
 
 #if DBGLOG_LEVEL >= 3
-#  define DBGLOG_ERROR(format, ...) DBGLOG_FUNCTION(stdout, format, ## __VA_ARGS__); fflush(stdout);
+#  define DBGLOG_ERROR(...) DBGLOG_FUNCTION(stdout, ## __VA_ARGS__); fflush(stdout);
 #else
-#  define DBGLOG_ERROR(format, ...)
+#  define DBGLOG_ERROR(...)
 #endif
 
 #if DBGLOG_LEVEL >= 2
-#  define DBGLOG_WARNING(format, ...) DBGLOG_FUNCTION(stdout, format, ## __VA_ARGS__); fflush(stdout);
+#  define DBGLOG_WARNING(...) DBGLOG_FUNCTION(stdout, ## __VA_ARGS__); fflush(stdout);
 #else
-#  define DBGLOG_WARNING(format, ...)
+#  define DBGLOG_WARNING(...)
 #endif
 
 #if DBGLOG_LEVEL >= 1
-#  define DBGLOG_INFO(format, ...) DBGLOG_FUNCTION(stdout, format, ## __VA_ARGS__); fflush(stdout);
+#  define DBGLOG_INFO(...) DBGLOG_FUNCTION(stdout, ## __VA_ARGS__); fflush(stdout);
 #else
-#  define DBGLOG_INFO(format, ...)
+#  define DBGLOG_INFO(...)
 #endif
 
-#define DBGLOG_FORCE(force, format, ...) {if(force) {DBGLOG_FUNCTION(stdout, format, ## __VA_ARGS__);fflush(stdout);}}
+#define DBGLOG_FORCE(force, ...) {if(force) {DBGLOG_FUNCTION(stdout, ## __VA_ARGS__);fflush(stdout);}}
 //#endif /* __DBGLOG_H__ */
